@@ -48,4 +48,4 @@ plt.show()
 merged_image = Image.fromarray(merged_image)
 
 if ellipside:
-    merged_image.save('ebay-fc-embedding-cls-t-sne-128-without-hsv.png')
+    merged_image.save('vis-result/ebay/embed128-multiloss-without-hsv.png')
