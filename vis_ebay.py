@@ -17,7 +17,7 @@ for i,s in enumerate(all_the_text):
     if((i+1)%4==0):
         image_names.append(s)
 
-features = scipy.io.loadmat('embeddings/ebay/validation_googlenet_feat_matrix_liftedstructsim_softmax_pair_m128_multilabel_embed128_baselr_1E4_gaussian2k_fcembeddingcls.mat')
+features = scipy.io.loadmat('embeddings/ebay/embed128_multiloss_without_hsv.mat')
 
 features = features['fc_embedding_cls'][:len(image_names)]
 
@@ -48,4 +48,4 @@ plt.show()
 merged_image = Image.fromarray(merged_image)
 
 if ellipside:
-    merged_image.save('ebay-fc-embedding-cls-t-sne-128.png')
+    merged_image.save('ebay-fc-embedding-cls-t-sne-128-without-hsv.png')
