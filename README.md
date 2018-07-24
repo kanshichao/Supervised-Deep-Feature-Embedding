@@ -8,7 +8,9 @@ After our paper is accepted, we will keep updating and release more detailed cod
 1. Install python 2.7 in ubuntu (we test in this platform)
 2. Install or upgrade sklearn by the commond "sudo pip install -U scikit-learn"
 
+## Download Code
+git clone --recursive https://github.com/kanshichao/Supervised-Deep-Feature-Embedding.git
+
 ## Prerequisites
 2. Download datasets according to the links that are given in the data folder
 3. Download feature embeddings according to the links that are given in the embeddings folder
-
