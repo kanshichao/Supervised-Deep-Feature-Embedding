@@ -5,8 +5,8 @@ This code is to produce the t-SNE visualization of the deep feature embeddings. 
 After our paper is accepted, we will keep updating and release more detailed code. All feature embeddings of test datasets and all trained models by our methods will be released soon.
 
 ## Installiation
-1. Install python 2.7 in ubuntu (we test in this platform)
-2. Install or upgrade sklearn by the commond "sudo pip install -U scikit-learn"
+1. We test our code based on python 2.7 in ubuntu
+2. Install or upgrade sklearn by using the commond "sudo pip install -U scikit-learn"
 
 ## Download Code
 git clone --recursive https://github.com/kanshichao/Supervised-Deep-Feature-Embedding.git

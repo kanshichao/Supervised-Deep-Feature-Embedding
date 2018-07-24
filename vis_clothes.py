@@ -17,7 +17,7 @@ for i,s in enumerate(all_the_text):
     if((i+1)%4==0):
         image_names.append(s)
 
-features = scipy.io.loadmat('embeddings/clothes/embed128_multiloss_without_hsv.mat')
+features = scipy.io.loadmat('embeddings/clothes/embed128_multiloss_with_hsv.mat')
 
 features = features['fc_embedding_cls'][:len(image_names)]
 
@@ -48,4 +48,4 @@ plt.show()
 merged_image = Image.fromarray(merged_image)
 
 if ellipside:
-    merged_image.save('vis-result/clothes/embed128-multiloss-without-hsv.png')
+    merged_image.save('vis-result/clothes/embed128-multiloss-with-hsv.png')
