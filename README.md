@@ -12,5 +12,5 @@ After our paper is accepted, we will keep updating and release more detailed cod
 git clone --recursive https://github.com/kanshichao/Supervised-Deep-Feature-Embedding.git
 
 ## Prerequisites
-2. Download datasets according to the links that are given in the data folder
-3. Download feature embeddings according to the links that are given in the embeddings folder
+1. Download datasets according to the links that are given in the data folder
+2. Download feature embeddings according to the links that are given in the embeddings folder
