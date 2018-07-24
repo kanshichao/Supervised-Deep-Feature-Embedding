@@ -48,4 +48,4 @@ plt.show()
 merged_image = Image.fromarray(merged_image)
 
 if ellipside:
-    merged_image.save('embed128-multiloss-without-hsv.png')
+    merged_image.save('vis-result/clothes/embed128-multiloss-without-hsv.png')
