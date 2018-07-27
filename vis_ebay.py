@@ -17,11 +17,11 @@ for i,s in enumerate(all_the_text):
     if((i+1)%4==0):
         image_names.append(s)
 
-features = scipy.io.loadmat('embeddings/ebay/embed128_multiloss_without_hsv.mat')
+features = scipy.io.loadmat('embeddings/ebay/embed128_multiloss_with_hsv.mat')
 
 features = features['fc_embedding_cls'][:len(image_names)]
 
-tsne = TSNE()
+tsne = TSNE(n_components=2)
 reduced = tsne.fit_transform(features)
 reduced_transformed = reduced - np.min(reduced,axis=0)
 reduced_transformed /= np.max(reduced_transformed,axis=0)

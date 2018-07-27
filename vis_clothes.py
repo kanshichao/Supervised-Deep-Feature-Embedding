@@ -21,7 +21,7 @@ features = scipy.io.loadmat('embeddings/clothes/embed128_multiloss_with_hsv.mat'
 
 features = features['fc_embedding_cls'][:len(image_names)]
 
-tsne = TSNE()
+tsne = TSNE(n_components=2)
 reduced = tsne.fit_transform(features)
 reduced_transformed = reduced - np.min(reduced,axis=0)
 reduced_transformed /= np.max(reduced_transformed,axis=0)
