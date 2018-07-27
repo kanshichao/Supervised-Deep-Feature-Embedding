@@ -54,7 +54,7 @@ for counter1,index1 in enumerate(retrive_result):
     st = 0
     for i, d in enumerate(image_labels.keys()):
         for j, q in enumerate(image_labels[d]):
-            if q == retrive_result[counter1][0]:
+            if q == img_id[counter1]+1:
                 st = d
                 break
         if st > 0:
