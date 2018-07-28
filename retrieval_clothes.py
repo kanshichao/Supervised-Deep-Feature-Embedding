@@ -66,8 +66,9 @@ for counter1,index1 in enumerate(retrive_result):
         b = int(np.ceil(counter2 * image_width))
         if img.ndim==3:
             merged_image[a:a+image_width,b:b+image_width,:] = img[:,:,:3]
+        flag = False
         for i, d in enumerate(image_labels[st]):
-            if(retrive_result[counter1][counter2] == d and counter2 > 0):
+            if(retrive_result[counter1][counter2] == d and counter2 >= 0):
                 merged_image[a:a+read_rect,b:b+image_width,0] = 255
                 merged_image[a:a+image_width,b:b+read_rect, 0] = 255
                 merged_image[a+image_width-read_rect:a+image_width,b:b+image_width, 0] = 255
@@ -76,21 +77,21 @@ for counter1,index1 in enumerate(retrive_result):
                 merged_image[a:a + image_width, b:b + read_rect, 1:] = 0
                 merged_image[a + image_width - read_rect:a + image_width, b:b + image_width, 1:] = 0
                 merged_image[a:a + image_width, b + image_width - read_rect:b + image_width, 1:] = 0
+                flag = True
                 break
-            if (retrive_result[counter1][counter2] == d and counter2 == 0):
-                merged_image[a:a + read_rect, b:b + image_width, 1] = 255
-                merged_image[a:a + image_width, b:b + read_rect, 1] = 255
-                merged_image[a + image_width - read_rect:a + image_width, b:b + image_width, 1] = 255
-                merged_image[a:a + image_width, b + image_width - read_rect:b + image_width, 1] = 255
-                merged_image[a:a + read_rect, b:b + image_width, 0] = 0
-                merged_image[a:a + image_width, b:b + read_rect, 0] = 0
-                merged_image[a + image_width - read_rect:a + image_width, b:b + image_width, 0] = 0
-                merged_image[a:a + image_width, b + image_width - read_rect:b + image_width, 0] = 0
-                merged_image[a:a + read_rect, b:b + image_width, 2] = 0
-                merged_image[a:a + image_width, b:b + read_rect, 2] = 0
-                merged_image[a + image_width - read_rect:a + image_width, b:b + image_width, 2] = 0
-                merged_image[a:a + image_width, b + image_width - read_rect:b + image_width, 2] = 0
-                break
+        if (not flag):
+            merged_image[a:a + read_rect, b:b + image_width, 1] = 255
+            merged_image[a:a + image_width, b:b + read_rect, 1] = 255
+            merged_image[a + image_width - read_rect:a + image_width, b:b + image_width, 1] = 255
+            merged_image[a:a + image_width, b + image_width - read_rect:b + image_width, 1] = 255
+            merged_image[a:a + read_rect, b:b + image_width, 0] = 0
+            merged_image[a:a + image_width, b:b + read_rect, 0] = 0
+            merged_image[a + image_width - read_rect:a + image_width, b:b + image_width, 0] = 0
+            merged_image[a:a + image_width, b + image_width - read_rect:b + image_width, 0] = 0
+            merged_image[a:a + read_rect, b:b + image_width, 2] = 0
+            merged_image[a:a + image_width, b:b + read_rect, 2] = 0
+            merged_image[a + image_width - read_rect:a + image_width, b:b + image_width, 2] = 0
+            merged_image[a:a + image_width, b + image_width - read_rect:b + image_width, 2] = 0
 plt.imshow(merged_image)
 plt.show()
 merged_image = Image.fromarray(merged_image)
