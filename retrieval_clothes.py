@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 import scipy.io
 import random
 
+import time
+
 image_path = 'data/clothes/In Shop Clothes Retrieval/'
 file_object = open('data/clothes/clothes_test.txt')
 try:
@@ -37,6 +39,7 @@ show_num_images = 30
 seq = [i for i in range(len(image_names))]
 img_id = random.sample(seq,show_num_images)
 
+start = time.time()
 for i,f in enumerate(img_id):
     for j in range(len(image_names)):
         fd[j,:] = features[f]
@@ -44,6 +47,8 @@ for i,f in enumerate(img_id):
     retrive_result.append(idx[:show_num_images]+1)
     if(i==show_num_images):
         break
+elapsed = time.time()-start
+print 'avg-time:{}ms'.format(elapsed*1000/show_num_images)
 
 image_width = 200
 read_rect = int(image_width/20)
