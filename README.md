@@ -2,7 +2,7 @@
 ## Introduction
 This project is to produce the t-SNE visualization and actual query results of the deep feature embeddings. Mainly for the paper "Supervised Deep Feature Embedding with Hand Crafted Feature" based on the Stanford Online Products test data set and the In-shop Clothes Retrieval test data set.
 
-After our paper is accepted, we will keep update and release more detailed code. All feature embeddings of test data sets and all trained models by our methods will be released soon.
+This paper has been accepted for publication in the IEEE Transactions on Image Processing. All feature embeddings of test data sets and all trained models by our methods will be released soon.
 
 ## Installiation
 1. We test our code based on python 2.7 in ubuntu
